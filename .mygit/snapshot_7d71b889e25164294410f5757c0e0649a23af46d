@@ -1,0 +1,7 @@
+{
+  "message": "My first snapshot!",
+  "timestamp": 1753029472.230321,
+  "files": {
+    "test.txt": "e7b290e1c1aeae01076e2c48cd2c8fdb20c25f25"
+  }
+}
