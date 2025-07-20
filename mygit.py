@@ -147,21 +147,47 @@ def show_history():
         print(f"  {snapshot['id'][:8]} - {snapshot['message']} ({time_str})")
         print(f"    Files: {', '.join(snapshot['files'].keys())}")
 
-# Let's test it
+# Let's test it with command line interface
 if __name__ == "__main__":
-    create_repo()
+    import sys
     
-    # Check if test.txt exists and add it to staging
-    if os.path.exists('test.txt'):
-        print("\nFound test.txt! Adding it to staging area...")
-        add_file('test.txt')
-        print("\nStaging area status:")
+    # Make sure we have a repository
+    if not os.path.exists('.mygit'):
+        create_repo()
+    
+    # Check what command the user wants
+    if len(sys.argv) == 1:
+        # No command given, show help
+        print("MyGit - Simple Version Control")
+        print("Commands:")
+        print("  python mygit.py add <filename>     - Add file to staging")
+        print("  python mygit.py commit '<message>' - Create snapshot")
+        print("  python mygit.py status             - Show staging area")
+        print("  python mygit.py history            - Show all snapshots")
+        
+    elif sys.argv[1] == "add":
+        if len(sys.argv) != 3:
+            print("Usage: python mygit.py add <filename>")
+        else:
+            filename = sys.argv[2]
+            if os.path.exists(filename):
+                add_file(filename)
+            else:
+                print(f"File '{filename}' not found!")
+    
+    elif sys.argv[1] == "commit":
+        if len(sys.argv) != 3:
+            print("Usage: python mygit.py commit '<message>'")
+        else:
+            message = sys.argv[2]
+            commit(message)
+    
+    elif sys.argv[1] == "status":
         show_staging()
-        print("\nCreating first snapshot...")
-        commit("My first snapshot!")
-        print("\nHistory:")
+    
+    elif sys.argv[1] == "history":
         show_history()
+    
     else:
-        print("\nPlease create test.txt with some content first!")
-        print("Example: echo 'Hello World!' > test.txt")
-        print("Then run this script again.")
+        print(f"Unknown command: {sys.argv[1]}")
+        print("Run 'python mygit.py' for help")
