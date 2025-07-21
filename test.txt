@@ -3,4 +3,6 @@ Hello Mars!
 Hello Universe!
 Hello from Me
 new changes
+New changes for diff
+here will be seen
 Commands as real git as possible
