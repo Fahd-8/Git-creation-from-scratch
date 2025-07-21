@@ -1,28 +1,28 @@
-# MyGit - Simple Version Control System
+**MyGit - Simple Version Control System**
 
 A learning project to understand how Git works by building a simplified version control system from scratch.
 
-## Project Overview
+*Project Overview*
 
 We're developing a simplified version control application to understand how Git is created and how it works. This is purely for educational purposes - to see the core concepts behind Git by implementing them step by step.
 
-## Implementation Steps
+*Implementation Steps*
 
-### Step 1: Basic Foundation
+<!-- Step 1: Basic Foundation -->
 Create a folder to store our "version history" (similar to Git's `.git` folder)
 
-### Step 2: File Storage System
+<!-- Step 2: File Storage System -->
 Save file content and generate unique IDs for each file (using hashing, like Git does)
 
-### Step 3: Staging Area
+<!-- Step 3: Staging Area -->
 Keep track of what files we want to save (implementing Git's "staging area" concept)
 
-### Step 4: Commit System
+<!-- Step 4: Commit System -->
 Create snapshots (commits) of our staged files with commit messages
 
-## Usage Examples
+*Usage Examples*
 
-### Basic Command Structure
+**Basic Command Structure**
 
 ```bash
 # See available commands
