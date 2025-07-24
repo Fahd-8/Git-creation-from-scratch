@@ -86,7 +86,7 @@ python mygit.py history
 
 ## Conclusion
 
-You've built a real (simplified) version control system! The architecture is identical to Git - the main difference is that Git has many more features and optimizations. This project demonstrates that version control systems, while complex in their full implementations, are built on relatively simple core concepts.
+A real (simplified) version control system! The architecture is identical to Git - the main difference is that Git has many more features and optimizations. This project demonstrates that version control systems, while complex in their full implementations, are built on relatively simple core concepts.
 
 The foundation you've created could be extended with additional features like:
 - Branching and merging
